@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import Login from './components/login-page/login'
+import SignUp from './components/signup-page/signUp'
+import MainUser from './components/main-user-page/main-user'
+import Checkout from './components/checkout-page/checkout'
+import MainAdmin from './components/main-admin-page/main-admin'
+import Create from './components/create-page/create'
+import EditDelete from './components/edit&delete-page/edit-delete'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Login} />
+        <Route exact path="/signup" component={SignUp} />
+        <Route exact path="/main-user" component={MainUser} />
+        <Route exact path="/checkout" component={Checkout} />
+        <Route exact path="/main-admin" component={MainAdmin} />
+        <Route exact path="/create" component={Create} />
+        <Route exact path="/edit-delete" component={EditDelete} />
+      </Switch>
+    </Router>
   );
 }
 
