@@ -10,6 +10,15 @@ let itemsReducer = (state = defaultState, action) => {
                 ...state,
                 cart: cart.push(action.payload)
             }
+        case 'DELETE-ITEM':
+            for(let i = 0;i < state.items.length; i++) {
+                if(state.items[i].id === action.payload.id) {
+                    return {
+                        ...state,
+                        items: items.splice(i,1)
+                    }
+                }
+            }
         case 'ADD-ITEM':
             return {
                 ...state,
