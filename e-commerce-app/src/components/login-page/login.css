@@ -1,3 +1,7 @@
 #login-main-container {
-    height: 100vh
+    height: 100vh;
+    background: #B3E5FC;
+}
+.login-h1{
+    color: #212121;
 }

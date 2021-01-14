@@ -6,10 +6,10 @@ const SignUp = () => {
     const signup = useSelector(state => state.signup)
     const dispatch = useDispatch()
     return (
-        <div className="d-flex flex-column align-items-center justify-content-center" id="login-main-container">
+        <div className="d-flex flex-column align-items-center justify-content-center" id="signup-main-container">
             <div className="col-8">
                 <div className="d-flex justify-content-center">
-                    <h1><b>Sign Up</b></h1>
+                    <h1 className="signup-h1">Sign Up</h1>
                 </div>
                 <form onSubmit=
                     {
@@ -67,7 +67,7 @@ const SignUp = () => {
                     <button className="form-control btn btn-primary mt-5">Back to login</button>
                 </Link>    
                 <div className='d-flex justify-content-center mt-5'>
-                    <h1>{signup.message}</h1>
+                    <h1 className="signup-h1">{signup.message}</h1>
                 </div>
                 {signup.userCreated ? <Redirect to='/'></Redirect>: ''}
             </div>
