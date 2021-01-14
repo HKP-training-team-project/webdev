@@ -11,7 +11,7 @@ const MainAdmin = () => {
         const requestOptions = {
             method: 'GET'
         };
-        fetch('link', requestOptions)
+        fetch('${link}/items', requestOptions)
             .then(response => response.json())
             .then(data => setItems(data.items));
     }, [])
@@ -28,15 +28,15 @@ const MainAdmin = () => {
     return (
         <div className = "mainAdmin">
             <h1>Shopping</h1>
-                <h2>Your Items</h2>
-                <div class = "mainAdmin_buttons">
+            <h2>Your Items</h2>
+            <div class = "mainAdmin_buttons">
                 <Link to='/edit-delete'>
                         <button className="mainAdmin_button">Edit</button>
                 </Link>
                 <Link to='/create'>
                         <button className="mainAdmin_button">Add</button>
                 </Link>
-                </div>
+            </div>
             <div class = "mainAdmin_items">{adminItems}</div>
             
         </div>
