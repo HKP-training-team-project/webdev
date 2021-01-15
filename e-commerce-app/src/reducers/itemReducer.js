@@ -9,10 +9,6 @@ const defaultState = {
 }
 const itemReducer = (state = defaultState, action) => {
     switch(action.type) {
-        case 'DELETE-ITEM':
-            return defaultState
-        case 'ADD-ITEM':
-            return action.payload
         case 'INCREMENT':
             return {
                 ...state,

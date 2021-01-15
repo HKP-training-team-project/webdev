@@ -34,6 +34,7 @@ function Login() {
                                 else{
                                     dispatch({type: 'LOGIN-SUCCESS-USER'})
                                 }
+                                localStorage.setItem('token', data.token.substring(7))
                             }
                             if(response.status > 399 && response.status !== 500) {
                                 dispatch({
