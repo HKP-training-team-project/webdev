@@ -1,3 +1,7 @@
-#login-main-container {
-    height: 100vh
+#signup-main-container {
+    height: 100vh;
+    background: #B3E5FC;
+}
+.signup-h1{
+    color: #212121;
 }

@@ -3,9 +3,14 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import mainReducer from './reducers/mainReducer'
+import {Provider} from 'react-redux'
+import {createStore} from 'redux'
+const store = createStore(mainReducer)
 ReactDOM.render(
-    <App />,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('root')
 );
 
