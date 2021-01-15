@@ -1,11 +1,6 @@
 import React from 'react'
 import './edit-delete.css'
-<<<<<<< HEAD
 import {useDispatch} from 'react-redux'
-const AdminItemEdit = (props) => {
-    const pics = props.pictures.map(pic => <div className = "adminItemEdit_img"><img src = {pic}  /></div>);
-    const dispatch = useDispatch()
-=======
 import '../create-page/create.css'
 import {useState} from 'react';
 
@@ -16,7 +11,6 @@ const AdminItemEdit = (props) => {
         addPics(URL.createObjectURL(event.target.files[0]));
     }
     
->>>>>>> c46eb969e2cc6ce58d4dc2e957c2d81c4643aae5
     return (
         <div className = "adminItemEdit">
             <div className = "create_container">
