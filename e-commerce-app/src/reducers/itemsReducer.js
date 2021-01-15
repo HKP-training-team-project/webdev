@@ -1,3 +1,4 @@
+/*
 const defaultState = {
     cart: [],
     items: []
@@ -39,3 +40,4 @@ const itemsReducer = (state = defaultState, action) => {
     }
 }
 export default itemsReducer
+*/

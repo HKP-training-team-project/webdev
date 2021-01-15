@@ -16,10 +16,15 @@ const Create = () => {
     }
 
     const handleSubmit = event => {
+        event.preventDefault();
+        let pictures = []
+        if (pic != null) {
+            pictures.push(pic)
+        }
         const requestOptions = {
             method: 'POST',
-            headers: { 'Content-Type': 'multipart/form-data', 'Authorization': 'Bearer ${token}'},
-            body: JSON.stringify({ name, price, description, category, pic})
+            headers: { 'Content-Type': 'multipart/form-data', 'Authorization': `Bearer ${localStorage.getItem("token")}`},
+            body: `pictures=${pictures}&itemname=${event.target[0].value}&price=${event.target[1].value}&category=${event.target[3].value}&description=${event.target[2].value}`
         };
         fetch('https://hkp-training-teamprj.herokuapp.com/items', requestOptions)
             .then(response => response.json())
