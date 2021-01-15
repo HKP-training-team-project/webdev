@@ -8,21 +8,25 @@ let itemsReducer = (state = defaultState, action) => {
         case 'ADD-TO-CART':
             return {
                 ...state,
-                cart: cart.push(action.payload)
+                cart: state.cart.concat(action.payload)
             }
         case 'DELETE-ITEM':
             for(let i = 0;i < state.items.length; i++) {
                 if(state.items[i].id === action.payload.id) {
                     return {
                         ...state,
-                        items: items.splice(i,1)
+                        items: [
+                            ...state.items.slice(0, i),
+                            ...state.items.slice(i + 1)
+                        ]
                     }
                 }
             }
+            return state
         case 'ADD-ITEM':
             return {
                 ...state,
-                items: items.push(action.payload)
+                items: state.items.concat(action.payload)
             }
         case 'LOAD-ITEMS': 
             return {
@@ -34,6 +38,9 @@ let itemsReducer = (state = defaultState, action) => {
                 ...state,
                 cart: []
             }
+        default:
+            return state 
+
     }
 }
 export default itemsReducer
