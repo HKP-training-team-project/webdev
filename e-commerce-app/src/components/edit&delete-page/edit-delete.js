@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import './edit-delete.css'
 import AdminItemEdit from './admin-item-edit.js'
+import {Link} from 'react-router-dom'
 
 const EditDelete = () => {
     const [items, setItems] = useState(null);
@@ -24,8 +25,12 @@ const EditDelete = () => {
                                                     category = {item.category}
                                                     pictures = {item.pictures}/>);
     return (
-        <div>
-            <h1>Edit/Delete</h1>
+        <div className = "editDelete">
+            <h1>Shopping</h1>
+            <h2>Edit/Delete</h2>
+            <Link to='/main-admin'>
+                <button className="editDelete_button">Done</button>
+            </Link>
             {adminItems}
         </div>
     )

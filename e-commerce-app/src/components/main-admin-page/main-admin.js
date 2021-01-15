@@ -11,7 +11,7 @@ const MainAdmin = () => {
         const requestOptions = {
             method: 'GET'
         };
-        fetch('${link}/items', requestOptions)
+        fetch('https://hkp-training-teamprj.herokuapp.com/items', requestOptions)
             .then(response => response.json())
             .then(data => setItems(data.items));
     }, [])
