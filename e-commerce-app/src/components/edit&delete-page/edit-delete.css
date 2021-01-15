@@ -1,0 +1,48 @@
+.editDelete {
+    margin: 10px 20px 10px 20px;
+}
+
+.editDelete_button {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    border: none;
+    padding: 9px 15px 9px 15px;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: #03A9F4;
+    color: white;
+}
+
+.editDelete_button:hover {
+    background-color: #0288D1;
+}
+
+
+.editDelete h2 {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 3px solid #B3E5FC;
+    margin-bottom: 25px;
+}
+
+.adminItemEdit {
+    margin-left: 10px;
+}
+
+.adminItemEdit_buttons {
+    display:flex;
+    margin-left: auto;
+    margin-right: none;
+}
+
+.adminItemEdit_buttons button{
+    margin: 0px 10px 0px 10px;
+    width: 100px;
+}
+
+.adminItemEdit_buttons_delete button{
+    background-color: rgb(255, 72, 72);
+}

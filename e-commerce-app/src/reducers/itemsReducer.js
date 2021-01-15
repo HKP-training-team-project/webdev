@@ -3,7 +3,7 @@ const defaultState = {
     items: []
 }
 
-let itemsReducer = (state = defaultState, action) => {
+const itemsReducer = (state = defaultState, action) => {
     switch(action.type) {
         case 'ADD-TO-CART':
             return {
@@ -39,8 +39,12 @@ let itemsReducer = (state = defaultState, action) => {
                 cart: []
             }
         default:
+<<<<<<< HEAD
             return state 
 
+=======
+            return state
+>>>>>>> c46eb969e2cc6ce58d4dc2e957c2d81c4643aae5
     }
 }
 export default itemsReducer

@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import './create.css'
 import {useState} from 'react';
 
@@ -20,13 +21,16 @@ const Create = () => {
             headers: { 'Content-Type': 'multipart/form-data', 'Authorization': 'Bearer ${token}'},
             body: JSON.stringify({ name, price, description, category, pic})
         };
-        fetch('${link}/items', requestOptions)
+        fetch('https://hkp-training-teamprj.herokuapp.com/items', requestOptions)
             .then(response => response.json())
             .then(data => console.log(data.message));
     }
     return (
         <div className = "create">
             <h1>Shopping</h1>
+            <Link to='/main-admin'>
+                <button className="create_button">Cancel</button>
+            </Link>
             <h2>Add An Item</h2>
             <div className = "create_container">
                 <div className = "create_image-picker">
