@@ -36,3 +36,4 @@ let itemsReducer = (state = defaultState, action) => {
             }
     }
 }
+export default itemsReducer
