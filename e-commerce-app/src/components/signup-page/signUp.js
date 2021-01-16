@@ -6,12 +6,14 @@ const SignUp = () => {
     const signup = useSelector(state => state.signup)
     const dispatch = useDispatch()
     return (
-        <div className="d-flex flex-column align-items-center justify-content-center" id="signup-main-container">
-            <div className="col-8">
+        <div className ="d-flex flex-column align-items-center justify-content-center signup-main-container">
+        <div className="signup_card">
+            <div className="col-9">
                 <div className="d-flex justify-content-center">
                     <h1 className="signup-h1">Sign Up</h1>
                 </div>
-                <form onSubmit=
+                <form className = "signup_form"
+                onSubmit=
                     {
                         async (e) => {
                             e.preventDefault();
@@ -48,29 +50,34 @@ const SignUp = () => {
                     }
                 >
                     <div className="form-group">
-                        <input className="form-control" type="text" required="required" placeholder="Name" />
+                        <label for = "name">Name</label>
+                        <input className="form-control" name = "name" type="text" required="required" placeholder="Name" />
                     </div>
                     <div className="form-group">
-                        <input className="form-control" type="email" required="required" placeholder="email" />
+                        <label for = "email">Email</label>
+                        <input className="form-control" name = "email" type="email" required="required" placeholder="email" />
                     </div>
                     <div className="form-group">
-                        <input className="form-control" type="password" required="required" placeholder="password" />
+                        <label for = "password">Password</label>
+                        <input className="form-control" name = "password" type="password" required="required" placeholder="password" />
                     </div>
                     <div className="form-group">
-                        <input className="form-control" type="password" required="required" placeholder="confirm password" />
+                        <label for = "confirm-password">Confirm Password</label>
+                        <input className="form-control" name = "confirm-password" type="password" required="required" placeholder="confirm password" />
                     </div>
-                    <div className="form-group">
-                        <input className="form-control btn btn-primary" type="submit" value="Submit" />
+                    <div className="form-group d-flex justify-content-center">
+                        <button className="signup_button" type="submit">Submit</button>
                     </div>
                 </form>
                 <Link to='/'>
-                    <button className="form-control btn btn-primary mt-5">Back to login</button>
+                    <button className="form-control signup_login-button mt-5">Back to login</button>
                 </Link>    
                 <div className='d-flex justify-content-center mt-5'>
-                    <h1 className="signup-h1">{signup.message}</h1>
+                    <h1 className="signup-message">{signup.message}</h1>
                 </div>
                 {signup.userCreated ? <Redirect to='/'></Redirect>: ''}
             </div>
+        </div>
         </div>
     )
     

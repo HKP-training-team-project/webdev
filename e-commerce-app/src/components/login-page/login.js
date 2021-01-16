@@ -8,12 +8,13 @@ function Login() {
     const login = useSelector(state => state.login)
     const dispatch = useDispatch()
     return (
-        <div className="d-flex flex-column align-items-center justify-content-center" id="login-main-container">
-            <div className="col-8">
+        <div className ="d-flex flex-column align-items-center justify-content-center login-main-container">
+        <div className="login_card">
+            <div className="col-9">
                 <div className="d-flex justify-content-center">
                     <h1 className="login-h1">Log In</h1>
                 </div>
-                <form 
+                <form className = "login_form"
                     onSubmit={
                         async (e) => {
                             e.preventDefault()
@@ -57,28 +58,31 @@ function Login() {
                         }
                     }
                 >
-                    <div className="form-group">
-                        <input className="form-control" required="required" type="text" placeholder="email" />
+                    <div className="">
+                        <label for = "email">Email Address:</label>
+                        <input className="form-control" name = "email" required="required" type="email" placeholder="email" />
                     </div>
                     <div className="form-group">
-                        <input className="form-control" required="required" type="password" placeholder="password" />
+                        <label for = "password">Password:</label>
+                        <input className="form-control" name = "password" required="required" type="password" placeholder="password" />
                     </div>
-                    <div className="form-group">
-                        <input className="form-control btn btn-primary" type="submit" value="Submit" />
+                    <div className="form-group d-flex justify-content-center">
+                        <button className="login_button" type="submit">Submit</button>
                     </div>
                 </form>
                 <div className="d-flex justify-content-center mt-5">
-                    <h1 className="login-h1">Don't have an account?</h1>
+                    <h1 className="login_signup-h1">Don't have an account?</h1>
                 </div>
                 <Link to='/signup'>
-                    <button className="form-control btn btn-primary">Sign up</button>
+                    <button className="form-control btn login_signup-button">Sign up</button>
                 </Link>
                 <div className='d-flex justify-content-center mt-5'>
-                    <h1 className="login-h1">{login.message}</h1>
+                    <h1 className="login_message">{login.message}</h1>
                 </div>
                 {login.loggedIn && !login.isAdmin ? <Redirect to='/main-user'></Redirect> : ''}
                 {login.loggedIn && login.isAdmin ? <Redirect to='/main-admin'></Redirect> : ''}
             </div>
+        </div>
         </div>
     )
     
