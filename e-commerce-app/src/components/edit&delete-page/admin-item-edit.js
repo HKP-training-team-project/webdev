@@ -13,24 +13,24 @@ const AdminItemEdit = (props) => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        if (button == 1) {
-            let pictures = []
-            if (pic != null) {
-                pictures.push(pic)
-            } else {
-                pictures.push(props.pictures[0])
-            }
-            const requestOptions = {
-                method: 'PUT',
-                headers: { 'Content-Type': 'multipart/form-data', 'Authorization': `Bearer ${window.localStorage.getItem("token")}`},
-                body: `itemname=${event.target[0].value}&price=${event.target[1].value}&description=${event.target[2].value}&category=${event.target[3].value}&pictures=${pictures}`
-            };
-            fetch(`https://hkp-training-teamprj.herokuapp.com/items/:${props.key}`, requestOptions)
-                .then(response => response.json())
-                .then(data => console.log(data.message));
+        var fd = new FormData();
+        if (pic != null) {
+            fd.append("pictures", pic);
+        } else {
+            fd.append("pictures", props.pictures[0]);
         }
-        else {
-        }
+        fd.append("itemname", event.target[0].value);
+        fd.append("price", event.target[1].value);
+        fd.append("category", event.target[3].value);
+        fd.append("description", event.target[2].value);
+        const requestOptions = {
+            method: 'PUT',
+            headers: {'Authorization': `Bearer ${localStorage.getItem("token")}`},
+            body: fd
+        };
+        fetch(`https://hkp-training-teamprj.herokuapp.com/items/${props.id}`, requestOptions)
+            .then(response => response.json())
+            .then(data => console.log(data.message));
     }
     
     return (
