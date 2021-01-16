@@ -8,6 +8,6 @@ let mainReducer = combineReducers({
     login: loginReducer,
     item: itemReducer,
     signup: signupReducer,
-    
+    items: itemsReducer
 })
 export default mainReducer

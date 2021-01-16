@@ -12,6 +12,7 @@
     border-radius: 10px;
     background-color: #03A9F4;
     color: white;
+    z-index: 2;
 }
 
 .editDelete_button:hover {
@@ -35,14 +36,27 @@
 .adminItemEdit_buttons {
     display:flex;
     margin-left: auto;
-    margin-right: none;
+    margin-right: 120px;
 }
 
 .adminItemEdit_buttons button{
-    margin: 0px 10px 0px 10px;
+    margin: 0px 10px 9px 10px;
     width: 100px;
+}
+
+.adminItemEdit_buttons_delete {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    bottom: 53px;
 }
 
 .adminItemEdit_buttons_delete button{
     background-color: rgb(255, 72, 72);
+    padding: 10px;
+    border-radius: 20px;
+    margin: 0px 40px 0px 40px;
+    color: white;
+    border: none;
+    width: 100px;
 }

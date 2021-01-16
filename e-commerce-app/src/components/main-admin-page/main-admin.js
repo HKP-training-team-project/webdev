@@ -3,10 +3,9 @@ import {Link} from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import './main-admin.css'
 import AdminItem from './admin-item.js'
-import {useDispatch,useSelector} from 'react-redux'
 
 const MainAdmin = () => {
-    const [items, setItems] = useState(null);
+    const [items, setItems] = useState([]);
 
     useEffect(() => {
         const requestOptions = {
@@ -21,13 +20,13 @@ const MainAdmin = () => {
     {"_id": "wej2367", "itemname": "Ornament", "price": "10", "description": "This is a Christmas Ornament!", "category": "Holiday", "pictures": ["https://371266-1160757-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/11/MWA_GlassOrnaments_02.jpg"]},
     {"_id": "2tn3ho", "itemname": "Cookies", "price": "9", "description": "These are Christmas cookies!", "category": "Holiday", "pictures": ["https://www.momlovesbaking.com/wp-content/uploads/2018/11/Grandmas-Christmas-Cutout-Sugar-Cookies-SQ2.jpg"]}])
     
-    const adminItems = tempItems.map(item => <AdminItem key = {item._id} 
+    const adminItems = items.map(item => <AdminItem key = {item._id} 
                                                     name = {item.itemname} 
                                                     price = {item.price}
                                                     description = {item.description}
                                                     category = {item.category}
                                                     pictures = {item.pictures}/>);
-    const mainAdminState = useSelector(state => state.items)
+
     return (
         <div className = "mainAdmin">
             <h1>Shopping</h1>

@@ -2,10 +2,12 @@ import React from 'react'
 import './main-admin.css'
 
 const AdminItem = (props) => {
-    const pics = props.pictures.map(pic => <div className = "adminItem_img"><img src = {pic}  /></div>);
+    const pics = props.pictures.map(pic => <div className = "adminItem_img"><img src = {`https://hkp-training-teamprj.herokuapp.com/${pic}`}  /></div>);
     return (
         <div className = "adminItem">
-            {pics}
+            <div className = "adminItem_img">
+                <img src = {`https://hkp-training-teamprj.herokuapp.com/${props.pictures[0]}`}  />
+            </div>
             <h3>{props.name}</h3>
             <p>${props.price}</p>
         </div>
