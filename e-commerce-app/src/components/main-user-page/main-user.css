@@ -1,0 +1,38 @@
+#user-main-container {
+  background-color: #B3E5FC;
+  height: 100vh;
+  padding: 20px;
+}
+
+#user-items-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 50px 20px;
+}
+
+#user-items-page-header {
+  display: inline;
+}
+
+#user-page-title {
+  float: left
+}
+
+#cart-icon {
+  float: right;
+  transition: transform ease-in-out .2s;
+}
+
+#cart-icon:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+#cart-link {
+  color: black;
+}
+
+#cart-count {
+  margin-left: 10px;
+  font-size: 2.5rem;
+}

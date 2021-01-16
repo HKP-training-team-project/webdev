@@ -1,0 +1,59 @@
+#user-item-page-container {
+  text-align: center;
+  padding: 50px;
+  background-color: #B3E5FC;
+  height: 100vh;
+}
+
+#user-item-container {
+  background-color: white;
+  box-shadow: 5px 5px 15px black;
+  border-radius: 10px; 
+  padding: 15px 35px;
+  margin: 0 20%;
+}
+
+#user-item-page-name {
+    font-size: 3rem;
+}
+
+#user-item-page-description {
+  font-size: 2rem;
+}
+
+#item-price-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  font-size: 2rem;
+  margin: 0 20%;;
+}
+
+#user-item-page-price {
+  width: 150px;
+  text-align: right;
+}
+
+#user-item-page-quantity {
+  justify-self: center;
+  width: 65px;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#user-item-total-cost {
+  width: 150px;
+}
+
+#add-to-cart-btn {
+  background-color: #B3E5FC;
+  color: black;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 2px 2px 5px black;
+  outline: none;
+  font-size: 1.5rem;
+  padding: 5px 10px;
+  font-weight: bold;
+  margin: 25px 0;
+}

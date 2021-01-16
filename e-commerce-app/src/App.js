@@ -1,6 +1,7 @@
 import Login from './components/login-page/login'
 import SignUp from './components/signup-page/signUp'
 import MainUser from './components/main-user-page/main-user'
+import Item from './components/item-page/item'
 import Checkout from './components/checkout-page/checkout'
 import MainAdmin from './components/main-admin-page/main-admin'
 import Create from './components/create-page/create'
@@ -35,6 +36,7 @@ function App() {
         <Route exact path="/" component={Login} />
         <Route exact path="/signup" component={SignUp} />
         <PrivateRoute exact path="/main-user" component={MainUser} />
+        <PrivateRoute exact path="/item" component={Item} />
         <PrivateRoute exact path="/checkout" component={Checkout} />
         <PrivateRoute exact path="/main-admin" component={MainAdmin} />
         <PrivateRoute exact path="/create" component={Create} />
