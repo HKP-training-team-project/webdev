@@ -1,3 +1,6 @@
+html{
+  background-color: #B3E5FC;
+}
 #user-main-container {
   background-color: #B3E5FC;
   height: 100vh;
@@ -34,5 +37,5 @@
 
 #cart-count {
   margin-left: 10px;
-  font-size: 2.5rem;
+  height: 4vh;
 }
