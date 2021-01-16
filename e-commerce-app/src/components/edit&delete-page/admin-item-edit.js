@@ -1,6 +1,5 @@
 import React from 'react'
 import './edit-delete.css'
-import {useDispatch} from 'react-redux'
 import '../create-page/create.css'
 import {useState} from 'react';
 
@@ -31,13 +30,6 @@ const AdminItemEdit = (props) => {
                 .then(data => console.log(data.message));
         }
         else {
-            const requestOptions = {
-                method: 'DELETE',
-                headers: { 'Authorization': `Bearer ${window.localStorage.getItem("token")}`},
-            };
-            fetch(`https://hkp-training-teamprj.herokuapp.com/items/:${props.key}`, requestOptions)
-                .then(response => response.json())
-                .then(data => console.log(data.message));
         }
     }
     
@@ -61,10 +53,7 @@ const AdminItemEdit = (props) => {
                         <label for = "category">Category</label>
                         <input type = "text" name = "category" defaultValue = {props.category} required />
                         <div className = "adminItemEdit_buttons">
-                            <button type="submit" onClick={() => setButton(1)}>Save</button>
-                            <div className = "adminItemEdit_buttons_delete">
-                                <button type="submit" onClick={() => setButton(2)}>Delete</button>
-                            </div>
+                            <button type="submit">Save</button>
                         </div>
                     </form>
                 </div>
