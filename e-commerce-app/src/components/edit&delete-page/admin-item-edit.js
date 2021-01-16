@@ -1,5 +1,6 @@
 import React from 'react'
 import './edit-delete.css'
+import {useDispatch} from 'react-redux'
 import '../create-page/create.css'
 import {useState} from 'react';
 
@@ -45,7 +46,7 @@ const AdminItemEdit = (props) => {
             <div className = "create_container">
                 <div className = "create_image-picker">
                     <div className = "create_box">
-                        {pic != null ? <img src = {pic}/> : <img src = {props.pictures[0]}/>}
+                        {pic != null ? <img src = {pic}/> : <img src = {`https://hkp-training-teamprj.herokuapp.com/${props.pictures[0]}`} />}
                     </div>
                     <input type = "file" accept="image/*" onChange = {fileHandler}/>
                 </div>

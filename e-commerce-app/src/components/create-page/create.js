@@ -5,30 +5,37 @@ import {useState} from 'react';
 
 const Create = () => {
     const [pic, addPics] = useState(null);
+    const [picFile, addPicFile] = useState(null);
     const [name, setName] = React.useState("");
-    const [price, setPrice] = React.useState("");
+    const [price, setPrice] = React.useState(0);
     const [description, setDescription] = React.useState("");
     const [category, setCategory] = React.useState("");
 
 
     const fileHandler = event => {
         addPics(URL.createObjectURL(event.target.files[0]));
+        addPicFile(event.target.files[0])
     }
 
     const handleSubmit = event => {
         event.preventDefault();
-        let pictures = []
-        if (pic != null) {
-            pictures.push(pic)
+        var fd = new FormData();
+        if (picFile != null) {
+            fd.append("pictures", picFile);
         }
+        fd.append("itemname", event.target[0].value);
+        fd.append("price", event.target[1].value);
+        fd.append("category", event.target[3].value);
+        fd.append("description", event.target[2].value);
         const requestOptions = {
             method: 'POST',
-            headers: { 'Content-Type': 'multipart/form-data', 'Authorization': `Bearer ${localStorage.getItem("token")}`},
-            body: `pictures=${pictures}&itemname=${event.target[0].value}&price=${event.target[1].value}&category=${event.target[3].value}&description=${event.target[2].value}`
+            headers: {'Authorization': `Bearer ${localStorage.getItem("token")}`},
+            body: fd
         };
         fetch('https://hkp-training-teamprj.herokuapp.com/items', requestOptions)
             .then(response => response.json())
-            .then(data => console.log(data.message));
+            .then(data => console.log(data.message))
+            .catch(err => console.log("Error reading data" + err));
     }
     return (
         <div className = "create">
@@ -38,14 +45,14 @@ const Create = () => {
             </Link>
             <h2>Add An Item</h2>
             <div className = "create_container">
-                <div className = "create_image-picker">
-                    <div className = "create_box">
-                        {pic != null ? <img src = {pic}/> : <p>Choose an image</p>}
-                    </div>
-                    <input type = "file" accept="image/*" onChange = {fileHandler}/>
+            <div className = "create_image-picker">
+                <div className = "create_box">
+                    {pic != null ? <img src = {pic}/> : <p>Choose an image</p>}
                 </div>
+                <input type = "file" accept="image/*" onChange = {fileHandler}/>
+            </div>
                 <div className = "create_inputs">
-                    <form className = "create_form" onSubmit = {handleSubmit}>
+                    <form className = "create_form" enctype="multipart/form-data" onSubmit = {handleSubmit}>
                         <label for = "name">Name</label>
                         <input type = "text" name = "name" value = {name} required onChange = {(event) => setName(event.target.value)}/>
                         <label for = "price">Price</label>
