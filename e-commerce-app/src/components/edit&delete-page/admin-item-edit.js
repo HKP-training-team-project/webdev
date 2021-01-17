@@ -5,17 +5,18 @@ import {useState} from 'react';
 
 const AdminItemEdit = (props) => {
     const [pic, addPics] = useState(null);
-    const [button, setButton] = useState(0);
+    const [picFile, addPicFile] = useState(null);
     
     const fileHandler = event => {
         addPics(URL.createObjectURL(event.target.files[0]));
+        addPicFile(event.target.files[0])
     }
 
     const handleSubmit = event => {
         event.preventDefault();
         var fd = new FormData();
-        if (pic != null) {
-            fd.append("pictures", pic);
+        if (picFile != null) {
+            fd.append("pictures", picFile);
         } else {
             fd.append("pictures", props.pictures[0]);
         }
@@ -35,15 +36,15 @@ const AdminItemEdit = (props) => {
     
     return (
         <div className = "adminItemEdit">
-            <div className = "create_container">
-                <div className = "create_image-picker">
-                    <div className = "create_box">
+            <div className = "adminItemEdit_container">
+                <div className = "adminItemEdit_image-picker">
+                    <div className = "adminItemEdit_box">
                         {pic != null ? <img src = {pic}/> : <img src = {`https://hkp-training-teamprj.herokuapp.com/${props.pictures[0]}`} />}
                     </div>
                     <input type = "file" accept="image/*" onChange = {fileHandler}/>
                 </div>
-                <div className = "create_inputs">
-                    <form className = "create_form" onSubmit = {handleSubmit}>
+                <div className = "adminItemEdit_inputs">
+                    <form className = "adminItemEdit_form" enctype="multipart/form-data" onSubmit = {handleSubmit}>
                         <label for = "name">Name</label>
                         <input type = "text" name = "name" defaultValue = {props.name} required/>
                         <label for = "price">Price</label>
@@ -52,9 +53,7 @@ const AdminItemEdit = (props) => {
                         <textarea name = "description" rows="5" defaultValue = {props.description} required ></textarea>
                         <label for = "category">Category</label>
                         <input type = "text" name = "category" defaultValue = {props.category} required />
-                        <div className = "adminItemEdit_buttons">
-                            <button type="submit">Save</button>
-                        </div>
+                        <button type="submit" className = "adminItemEdit_buttons">Save</button>
                     </form>
                 </div>
             </div>

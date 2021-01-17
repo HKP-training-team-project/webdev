@@ -34,22 +34,100 @@
     margin-left: 10px;
 }
 
-.adminItemEdit_buttons {
-    display:flex;
-    margin-left: auto;
-    margin-right: 120px;
+.adminItemEdit_container {
+    display: flex;
 }
 
-.adminItemEdit_buttons button{
-    margin: 0px 10px 9px 10px;
+.adminItemEdit_box {
+    width: 440px;
+    height: 300px;
+    background-color: #8f8f8f;
+    color: white;
+    overflow: hidden;
+}
+
+@media (max-width: 860px) {
+    .adminItemEdit_container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .adminItemEdit_box {
+        width: 490px;
+        height: 300px;
+        background-color: #8f8f8f;
+        color: white;
+    }
+}
+
+.adminItemEdit_box p{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 130px;
+}
+
+.adminItemEdit_box img{
+    display: flex;
+    margin: auto;
+    height: 300px;
+}
+
+.adminItemEdit_image-picker input {
+    padding: 10px;
+}
+
+.adminItemEdit_inputs {
+    width: 100%;
+    padding: 0px 30px 0px 30px;
+}
+
+.adminItemEdit_form{
+    display: flex;
+    flex-direction: column;
+}
+
+.adminItemEdit_form label{
+    font-weight: bold;
+    font-size: 0.93em;
+    margin: 0px;
+}
+
+.adminItemEdit_form input, .adminItemEdit_form textarea{
+    padding: 8px;
+    border: none;
+    background-color: rgb(243, 243, 243);
+    border-radius: 5px;
+    margin: 2px 0px 13px 0px;
+}
+
+.adminItemEdit_form button{
     width: 100px;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 20px 40px 20px 40px;
+    background-color: #03A9F4;
+    color: white;
+    border: none;
+    z-index: 2;
+    align-self: flex-end;
+    position: relative;
+    right: 100px;
+}
+
+.adminItemEdit_form button:hover, .adminItemEdit_buttons_delete button:hover{
+    background-color: black;
+    transition: 0.2s;
+    transform: scale(1.03);
+    cursor: pointer;
+
 }
 
 .adminItemEdit_buttons_delete {
     display: flex;
     justify-content: flex-end;
     position: relative;
-    bottom: 53px;
+    bottom: 65px;
 }
 
 .adminItemEdit_buttons_delete button{
