@@ -73,7 +73,7 @@
     height: 300px;
 }
 .create_image-picker input {
-    margin: 10px 10px 10px 120px;
+    margin: 10px 10px 10px -80px;
 }
 
 .create_inputs {
