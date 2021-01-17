@@ -73,7 +73,7 @@
     height: 300px;
 }
 .create_image-picker input {
-    padding: 10px;
+    margin: 10px 10px 10px 120px;
 }
 
 .create_inputs {
