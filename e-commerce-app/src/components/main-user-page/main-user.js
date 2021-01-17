@@ -57,13 +57,15 @@ const MainUser = () => {
     return (
         <div id="user-main-container">
             <div id="user-items-page-header">
-                <h1 id="user-page-title">Products</h1>
+                <h1>Shopping</h1>
                 <Link to="/checkout" id="cart-link">
                     <i id="cart-icon" className="fa fa-shopping-cart" style={{fontSize: "48px"}}>
                         <span id="cart-count">{numItemsInCart}</span>
                     </i>
                 </Link>
             </div>
+            <h2 id="user-page-title">Products</h2>
+            <p id="user-page-message">Click Items To Add To Cart</p>
             <div id="user-items-container">
             {
                 items.map(item => {
