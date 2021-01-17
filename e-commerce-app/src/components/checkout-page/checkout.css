@@ -1,6 +1,6 @@
 #checkout-page-container {
   background-color: #B3E5FC;
-  height: 100vh;
+  min-height: 100vh;
   padding: 20px;
 }
 

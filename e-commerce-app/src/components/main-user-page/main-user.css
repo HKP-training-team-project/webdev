@@ -1,6 +1,7 @@
 #user-main-container {
   background-color: #B3E5FC;
   padding: 20px;
+  min-height: 100vh;
 }
 #user-items-container {
   display: grid;

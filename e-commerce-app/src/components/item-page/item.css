@@ -1,17 +1,13 @@
-html {
-  background-color:#B3E5FC;
-}
-
 #user-item-page-container {
   text-align: center;
-  padding: 50px;
+  padding: 60px;
   width: 100%;
-  margin-top: 20px;
   background-color: #B3E5FC;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
 }
 
 #user-item-container {
@@ -103,11 +99,17 @@ html {
   height: auto;
 }
 #user-item-imgbox {
-  width: 100%;
+  width: 87%;
   height: auto;
   overflow: hidden;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (min-width: 750px) {
+  #user-item-imgbox {
+    width: 330px;
+  }
 }
