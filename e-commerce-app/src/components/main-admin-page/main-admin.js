@@ -31,7 +31,7 @@ const MainAdmin = () => {
         <div className = "mainAdmin">
             <h1>Shopping</h1>
             <h2>Your Items</h2>
-            <div class = "mainAdmin_buttons">
+            <div className = "mainAdmin_buttons">
                 <Link to='/edit-delete'>
                         <button className="mainAdmin_button">Edit</button>
                 </Link>
@@ -39,7 +39,7 @@ const MainAdmin = () => {
                         <button className="mainAdmin_button">Add</button>
                 </Link>
             </div>
-            <div class = "mainAdmin_items">{adminItems}</div>
+            <div className = "mainAdmin_items">{adminItems}</div>
             
         </div>
     )

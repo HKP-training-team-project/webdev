@@ -8,6 +8,7 @@ const BASE_URL = "https://hkp-training-teamprj.herokuapp.com";
 
 const MainUser = () => {
     const [items, setItems] = useState([]);
+    const [filter, setFilter] = useState(null)
     const [numItemsInCart, setNumItemsInCart] = useState(0);
     const token = localStorage.getItem('token');
     const userId = JWT.decode(token,'Put secret in .env!!!')._id;
@@ -53,31 +54,67 @@ const MainUser = () => {
     useEffect(() => {
         getCart();
     }, []);
-
+    let categories = items.map(item => item.category.trim().toLowerCase()) 
+    let categoriesSet = new Set(categories)
+    categories = [...categoriesSet]
+    let itemsList = [];
+    if(filter) {
+        for(let i of items) {
+            if(i.category.trim().toLowerCase() === filter){
+                itemsList.push(<UserItemListing key={i._id} 
+                    id={i._id}
+                    name={i.itemname} 
+                    price={i.price} 
+                    imgs={i.pictures} 
+                    description={i.description} 
+                />)
+            }
+        }
+    }
+    else{
+        itemsList = items.map(item => {
+            return (
+                <UserItemListing key={item._id} 
+                    id={item._id}
+                    name={item.itemname} 
+                    price={item.price} 
+                    imgs={item.pictures} 
+                    description={item.description} 
+                />
+            )
+        })
+    }
     return (
-        <div id="user-main-container">
-            <div id="user-items-page-header">
-                <h1 id="user-page-title">Products</h1>
+        <div id="user-main-container" className="container-fluid px-3">
+            <div id="user-items-page-header" className="d-flex justify-content-between ">
+                <h1 id="user-page-title" >Products</h1>
                 <Link to="/checkout" id="cart-link">
                     <i id="cart-icon" className="fa fa-shopping-cart" style={{fontSize: "48px"}}>
                         <span id="cart-count">{numItemsInCart}</span>
                     </i>
                 </Link>
             </div>
-            <div id="user-items-container">
-            {
-                items.map(item => {
-                    return (
-                        <UserItemListing key={item._id} 
-                            id={item._id}
-                            name={item.itemname} 
-                            price={item.price} 
-                            imgs={item.pictures} 
-                            description={item.description} 
-                        />
-                    )
-                })
-            }
+            <div className="container-fluid form-group d-flex flex-column align-items-center w-50" id="main-user-filter">
+                <h1>Filter Items</h1>
+                <select className="form-control" onChange=
+                    {
+                        (e) => {
+                            e.preventDefault()
+                            if(e.target.value === 'select') {
+                                setFilter(null) 
+                            }
+                            else {
+                                setFilter(e.target.value)
+                            }
+                        }
+                    }
+                >
+                    <option value="select">All Items</option>
+                    {categories.map(option => <option key={option} value={option}>{option}</option>)}
+                </select>
+            </div>
+            <div id="user-items-container" className="">
+            {itemsList}
             </div>
         </div>
     )

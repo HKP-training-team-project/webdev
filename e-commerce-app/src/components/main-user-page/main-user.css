@@ -3,13 +3,11 @@ html{
 }
 #user-main-container {
   background-color: #B3E5FC;
-  height: 100vh;
   padding: 20px;
 }
-
 #user-items-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 33% 33% 33%;
   margin: 50px 20px;
 }
 
@@ -38,4 +36,24 @@ html{
 #cart-count {
   margin-left: 10px;
   height: 4vh;
+}
+@media Screen and (max-width: 850px) {
+  #user-items-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 50px 20px;
+  }
+}
+@media Screen and (max-width: 550px) {
+  #user-items-container {
+    display: grid;
+    grid-template-columns: 100%;
+    margin: 50px 20px;
+  }
+}
+@media Screen and (max-width: 505px) {
+  #main-user-filter {
+    padding-top: 10px!important;
+    width: 100%!important;
+  }
 }
