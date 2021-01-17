@@ -86,13 +86,10 @@ const MainUser = () => {
     }
     return (
         <div id="user-main-container" className="container-fluid px-3">
-            <div id="user-items-page-header" className="d-flex justify-content-between ">
-                <h1 id="user-page-title" >Shopping</h1>
-                <Link to="/checkout" id="cart-link">
-                    <i id="cart-icon" className="fa fa-shopping-cart" style={{fontSize: "48px"}}>
-                        <span id="cart-count">{numItemsInCart}</span>
-                    </i>
-                </Link>
+            <div className="row d-flex">
+                <div id="user-items-page-header" className="d-flex justify-content-center w-100">
+                    <h1 id="user-page-title" >Shopping</h1>
+                </div>
             </div>
             <div className="container-fluid form-group d-flex flex-column align-items-center w-50" id="main-user-filter">
                 <h1>Filter Items</h1>
@@ -113,6 +110,14 @@ const MainUser = () => {
                     {categories.map(option => <option key={option} value={option}>{option}</option>)}
                 </select>
             </div>
+            <div className="d-flex flex-row justify-content-center w-100 pt-3" id="main-user-cart-header">
+                    <h2 className="pr-2">Add Items To Cart:</h2>
+                    <Link to="/checkout" id="cart-link">
+                        <i id="cart-icon" className="fa fa-shopping-cart" style={{fontSize: "48px"}}>
+                            <span id="cart-count">{numItemsInCart}</span>
+                        </i>
+                    </Link>
+                </div>
             <div id="user-items-container" className="">
             {itemsList}
             </div>

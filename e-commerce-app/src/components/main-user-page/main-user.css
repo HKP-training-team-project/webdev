@@ -10,7 +10,6 @@
 
 #user-items-page-header {
   display: flex;
-  justify-content: space-between;
 }
 
 #user-page-title {
@@ -46,14 +45,14 @@
   margin-left: 10px;
   height: 4vh;
 }
-@media Screen and (max-width: 850px) {
+@media Screen and (max-width: 970px) {
   #user-items-container {
     display: grid;
     grid-template-columns: 50% 50%;
     margin: 50px 20px;
   }
 }
-@media Screen and (max-width: 550px) {
+@media Screen and (max-width: 723px) {
   #user-items-container {
     display: grid;
     grid-template-columns: 100%;
@@ -64,5 +63,16 @@
   #main-user-filter {
     padding-top: 10px!important;
     width: 100%!important;
+  }
+}
+@media Screen and (max-width: 400px) {
+  #main-user-cart-header{
+    width: 100%;
+    display: flex!important;
+    flex-direction: column!important;
+  }
+  #main-user-cart-label {
+    display: flex;
+    justify-content: center;
   }
 }
