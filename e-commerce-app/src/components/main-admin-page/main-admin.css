@@ -1,5 +1,5 @@
 .mainAdmin {
-    height: 100vh;
+    min-height: 100vh;
 }
 .mainAdmin h1 {
     padding: 10px 20px 10px 20px;
