@@ -112,7 +112,7 @@ const MainUser = () => {
             </div>
             <p id = "user-page-message">Click Items To Add To Cart</p>
             <div className="d-flex flex-row justify-content-center w-100 pt-3" id="main-user-cart-header">
-                    <h2 className="pr-2">Add Items To Cart:</h2>
+                    <h2 className="pr-2">Cart:</h2>
                     <Link to="/checkout" id="cart-link">
                         <i id="cart-icon" className="fa fa-shopping-cart" style={{fontSize: "48px"}}>
                             <span id="cart-count">{numItemsInCart}</span>
