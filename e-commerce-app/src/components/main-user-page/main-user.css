@@ -1,3 +1,6 @@
+html {
+  background-color: #B3E5FC;
+}
 #user-main-container {
   background-color: #B3E5FC;
   padding: 20px;
@@ -75,8 +78,6 @@
 @media Screen and (max-width: 400px) {
   #main-user-cart-header{
     width: 100%;
-    display: flex!important;
-    flex-direction: column!important;
   }
   #main-user-cart-label {
     display: flex;

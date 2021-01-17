@@ -36,9 +36,9 @@ const AdminItemEdit = (props) => {
     return (
         <div className = "adminItemEdit">
             <div className = "create_container">
-                <div className = "create_image-picker">
-                    <div className = "create_box">
-                        {pic != null ? <img src = {pic}/> : <img src = {`https://hkp-training-teamprj.herokuapp.com/${props.pictures[0]}`} />}
+                <div className = "create_image-picker w-100 d-flex flex-column align-items-center">
+                    <div className = "create_box" id="admin-item-edit-create-box">
+                        {pic != null ? <img src = {pic}/> : <img id="admin-item-edit-image" src = {`https://hkp-training-teamprj.herokuapp.com/${props.pictures[0]}`} />}
                     </div>
                     <input type = "file" accept="image/*" onChange = {fileHandler}/>
                 </div>
