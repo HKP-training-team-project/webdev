@@ -6,12 +6,19 @@
 #user-items-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  min-height: 75vh;
 
 }
 
-@media (max-width: 930px) {
+@media (max-width: 985px) {
   #user-items-container {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  #user-items-container {
+    grid-template-columns: 1fr;
   }
 }
 

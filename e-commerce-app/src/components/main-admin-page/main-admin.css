@@ -53,6 +53,9 @@
     width: 260px;
     height: 260px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .adminItem img{

@@ -21,7 +21,9 @@ const UserItemListing = (props) => {
       >
       <h3 className="user-item-name">{props.name}</h3>
       <p className="user-item-price">${props.price}</p>
-      <img src={`${BASE_URL}/${props.imgs[0]}`} alt={props.name} width="100px"/>
+      <div className = "user-item-imgbox">
+        <img src={`${BASE_URL}/${props.imgs[0]}`} alt={props.name} width="200px"/>
+      </div>
       <p className="user-item-description">{props.description}</p>
       </Link>
     </div>

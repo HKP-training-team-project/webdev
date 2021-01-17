@@ -17,7 +17,6 @@ const EditDelete = () => {
     }, [])
     
     const deleteItems = (id) => {
-        console.log("hey")
         const requestOptions = {
             method: 'DELETE',
             headers: { 'Authorization': `Bearer ${localStorage.getItem("token")}`}

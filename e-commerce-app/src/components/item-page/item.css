@@ -3,11 +3,11 @@
   padding: 50px;
   background-color: #B3E5FC;
   height: 100vh;
+
 }
 
 #user-item-container {
   background-color: white;
-  box-shadow: 5px 5px 15px black;
   border-radius: 10px; 
   padding: 15px 35px;
   margin: 0 20%;
@@ -18,14 +18,15 @@
 }
 
 #user-item-page-description {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 #item-price-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
+  display: flex;
   font-size: 2rem;
-  margin: 0 20%;;
+  justify-content: center;
+  position: relative;
+  right: 30px;
 }
 
 #user-item-page-price {
@@ -37,23 +38,36 @@
   justify-self: center;
   width: 65px;
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  margin: 0px 0px 1rem 10px;
   text-align: center;
 }
 
 #user-item-total-cost {
-  width: 150px;
+  margin-left: 10px;
 }
 
 #add-to-cart-btn {
-  background-color: #B3E5FC;
-  color: black;
-  border-radius: 10px;
   border: none;
-  box-shadow: 2px 2px 5px black;
-  outline: none;
-  font-size: 1.5rem;
-  padding: 5px 10px;
+  padding: 9px 15px 9px 15px;
+  margin: 15px;
+  border-radius: 20px;
+  background-color: #03A9F4;
+  color: white;
+  font-size: 1.2rem;
   font-weight: bold;
-  margin: 25px 0;
+}
+
+#add-to-cart-btn:hover {
+  background-color: #0288D1;
+}
+
+
+#user-item-imgbox {
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

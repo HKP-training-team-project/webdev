@@ -16,11 +16,13 @@
 }
 
 .user-item-price {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  color: #757575;
 }
 
 .user-item-description {
-  font-size: 1.5rem;
+  padding-top: 15px;
+  font-size: 1.3rem;
 }
 
 .user-item-link {
@@ -32,6 +34,16 @@
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.user-item-imgbox {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
