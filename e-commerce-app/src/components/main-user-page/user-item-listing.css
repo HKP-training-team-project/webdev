@@ -37,8 +37,8 @@
 }
 
 .user-item-imgbox {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: auto;
   overflow: hidden;
   margin: auto;
   display: flex;
