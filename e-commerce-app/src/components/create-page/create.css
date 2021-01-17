@@ -1,5 +1,5 @@
 .create {
-    margin: 10px 20px 10px 20px;
+    padding: 10px 20px 10px 20px;
 }
 
 .create_button {
@@ -36,6 +36,7 @@
     height: 300px;
     background-color: #8f8f8f;
     color: white;
+    overflow: hidden;
 }
 
 @media (max-width: 860px) {

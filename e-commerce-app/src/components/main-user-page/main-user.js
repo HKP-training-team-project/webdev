@@ -87,7 +87,7 @@ const MainUser = () => {
     return (
         <div id="user-main-container" className="container-fluid px-3">
             <div id="user-items-page-header" className="d-flex justify-content-between ">
-                <h1 id="user-page-title" >Products</h1>
+                <h1 id="user-page-title" >Shopping</h1>
                 <Link to="/checkout" id="cart-link">
                     <i id="cart-icon" className="fa fa-shopping-cart" style={{fontSize: "48px"}}>
                         <span id="cart-count">{numItemsInCart}</span>

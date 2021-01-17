@@ -34,7 +34,9 @@ const Item = (props) => {
         <div id="user-item-page-container">
             <div id="user-item-container">
                 <h3 id="user-item-page-name">{itemDetails.name}</h3>
-                <img src={`${BASE_URL}/${itemDetails.imgs[0]}`} alt={itemDetails.name} width="200px"/>
+                <div id = "user-item-imgbox">
+                  <img src={`${BASE_URL}/${itemDetails.imgs[0]}`} alt={itemDetails.name} width="250px"/>
+                </div>
                 <p id="user-item-page-description">{itemDetails.description}</p>
                 <div id="item-price-container">
                     <p id="user-item-page-price">${itemDetails.price} x </p>

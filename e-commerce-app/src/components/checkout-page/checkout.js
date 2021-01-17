@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import JWT from 'jsonwebtoken';
 import "./checkout.css";
 
@@ -48,7 +49,13 @@ const Checkout = (props) => {
 
     return (
         <div id="checkout-page-container">
-            <h1>Checkout</h1>
+            <div id = "checkout-page-header">
+                <h1>Shopping</h1>
+                <Link to="/main-user">
+                    <button>Back</button>
+                </Link>
+            </div>
+            <h2>Checkout</h2>
             <table id="cart-items-list">
                 <thead>
                     <th>Item</th>
@@ -61,9 +68,9 @@ const Checkout = (props) => {
                         totalCost += parseFloat(item.price * item.quantity);
                         return (
                             <tr>
-                                <td>{item.itemname}</td>
-                                <td>{item.quantity}</td>
-                                <td className="total-price-col">${item.price * item.quantity}</td>
+                                <td className = "cart-items">{item.itemname}</td>
+                                <td className = "cart-items">{item.quantity}</td>
+                                <td className="total-price-col cart-items">${item.price * item.quantity}</td>
                             </tr>
                         )
                     })
