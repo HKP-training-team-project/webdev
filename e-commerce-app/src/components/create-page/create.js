@@ -43,11 +43,11 @@ const Create = () => {
             </Link>
             <h2>Add An Item</h2>
             <div className = "create_container">
-            <div className = "create_image-picker">
+            <div className = "create_image-picker d-flex flex-column align-items-center">
                 <div className = "create_box">
                     {pic != null ? <img src = {pic}/> : <p>Choose an image</p>}
                 </div>
-                <input type = "file" accept="image/*" onChange = {fileHandler}/>
+                    <input class="w-75" type = "file" accept="image/*" onChange = {fileHandler}/>
             </div>
                 <div className = "create_inputs">
                     <form className = "create_form" enctype="multipart/form-data" onSubmit = {handleSubmit}>

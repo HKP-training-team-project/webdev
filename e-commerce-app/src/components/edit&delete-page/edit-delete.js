@@ -41,7 +41,7 @@ const EditDelete = () => {
                                                 <button type="submit" onClick={() => deleteItems(item._id)}>Delete</button>
                                             </div></div>);
     return (
-        <div className = "editDelete">
+        <div className = "editDelete container-fluid">
             <h1>Shopping</h1>
             <h2>Edit/Delete</h2>
             <Link to='/main-admin'>

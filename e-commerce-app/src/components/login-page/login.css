@@ -9,7 +9,17 @@
     display: flex;
     justify-content: center;
     padding: 20px;
-    box-shadow: 12px 12px 10px #757575 ;
+    box-shadow: 12px 12px 10px #757575;
+}
+@media Screen and (max-width: 540px) {
+    .login_card {
+        background-color: rgba(255, 255, 255, 0.637);
+        width: 95%;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        box-shadow: 12px 12px 10px #757575;
+    };
 }
 .login-h1{
     color: #212121;

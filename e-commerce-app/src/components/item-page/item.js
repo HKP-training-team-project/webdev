@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import JWT from 'jsonwebtoken';
+import {Link} from 'react-router-dom'
 import "./item.css";
 
 const BASE_URL = "https://hkp-training-teamprj.herokuapp.com";
@@ -35,7 +36,7 @@ const Item = (props) => {
             <div id="user-item-container">
                 <h3 id="user-item-page-name">{itemDetails.name}</h3>
                 <div id = "user-item-imgbox">
-                  <img src={`${BASE_URL}/${itemDetails.imgs[0]}`} alt={itemDetails.name} width="250px"/>
+                  <img id="user-item-imgbox-image" src={`${BASE_URL}/${itemDetails.imgs[0]}`} alt={itemDetails.name} width="250px"/>
                 </div>
                 <p id="user-item-page-description">{itemDetails.description}</p>
                 <div id="item-price-container">
@@ -48,6 +49,9 @@ const Item = (props) => {
                 </div>
                 <button onClick={addToCart} id="add-to-cart-btn">Add to Cart</button>
             </div>
+            <Link to='/main-user'>
+              <input className="btn btn-primary my-3" id="cancel-add-to-cart-button" value="Cancel"/>
+            </Link>
         </div>
     )
 }
