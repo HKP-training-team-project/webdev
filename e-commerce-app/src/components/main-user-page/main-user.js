@@ -113,6 +113,7 @@ const MainUser = () => {
                     {categories.map(option => <option key={option} value={option}>{option}</option>)}
                 </select>
             </div>
+            <p id = "user-page-message">Click Items To Add To Cart</p>
             <div id="user-items-container" className="">
             {itemsList}
             </div>

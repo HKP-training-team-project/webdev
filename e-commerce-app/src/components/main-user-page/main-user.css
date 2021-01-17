@@ -5,7 +5,7 @@
 #user-items-container {
   display: grid;
   grid-template-columns: 33% 33% 33%;
-  margin: 50px 20px;
+  margin: 30px 20px;
 }
 
 #user-items-page-header {
@@ -20,6 +20,7 @@
   padding: 10px;
   border-bottom: 3px solid white;
   margin-bottom: 25px;
+  margin-left: 15%;
 }
 #user-page-message {
   color: white;
@@ -46,14 +47,14 @@
   margin-left: 10px;
   height: 4vh;
 }
-@media Screen and (max-width: 850px) {
+@media Screen and (max-width: 1000px) {
   #user-items-container {
     display: grid;
     grid-template-columns: 50% 50%;
     margin: 50px 20px;
   }
 }
-@media Screen and (max-width: 550px) {
+@media Screen and (max-width: 690px) {
   #user-items-container {
     display: grid;
     grid-template-columns: 100%;
@@ -65,4 +66,9 @@
     padding-top: 10px!important;
     width: 100%!important;
   }
+}
+
+#main-user-filter h1 {
+  font-size: 1.95em;
+  color: #3d3d3d;
 }

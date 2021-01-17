@@ -34,7 +34,7 @@
 .mainAdmin_items {
     display: grid;
     grid-template-columns: 260px 260px 260px;
-    grid-gap: 22px;
+    grid-gap: 24px;
     justify-content: center;
 }
 

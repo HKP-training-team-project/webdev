@@ -14,11 +14,12 @@
 }
 
 #user-item-page-name {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
 #user-item-page-description {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
+  padding-top: 5px;
 }
 
 #item-price-container {
@@ -26,7 +27,7 @@
   font-size: 2rem;
   justify-content: center;
   position: relative;
-  right: 30px;
+  right: 35px;
 }
 
 #user-item-page-price {
