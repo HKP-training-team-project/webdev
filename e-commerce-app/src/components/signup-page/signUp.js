@@ -45,6 +45,14 @@ const SignUp = () => {
                                         message
                                     }
                                 })
+                                setTimeout(() => {
+                                    dispatch({
+                                        type: 'SIGNUP-ERROR',
+                                        payload: {
+                                            message: ''
+                                        }
+                                    })
+                                },5000)
                             }
                         }
                     }

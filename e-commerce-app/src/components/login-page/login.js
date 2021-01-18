@@ -44,6 +44,14 @@ function Login() {
                                         message: 'Invalid Login Credientials'
                                     }
                                 })
+                                setTimeout(() => {
+                                    dispatch({
+                                        type: 'LOGIN-ERROR',
+                                        payload: {
+                                            message: ''
+                                        }
+                                    })
+                                }, 5000)
                                 e.target[0].value = ''
                                 e.target[1].value = ''
                             }
