@@ -3,9 +3,16 @@ import {Link} from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import './main-admin.css'
 import AdminItem from './admin-item.js'
+import {useSelector, useDispatch} from 'react-redux'
 
 const MainAdmin = () => {
+    const login = useSelector(state => state.login)
+    const dispatch = useDispatch()
     const [items, setItems] = useState([]);
+
+    const logout = () => {
+        dispatch({type: 'LOGOUT'});
+    }
 
     useEffect(() => {
         const requestOptions = {
@@ -29,14 +36,17 @@ const MainAdmin = () => {
 
     return (
         <div className = "mainAdmin">
+            <Link to="/">
+                <button id = "logout-button-admin" onClick = {logout}>Logout</button>
+            </Link>
             <h1>Shopping</h1>
             <h2>Your Items</h2>
             <div className = "mainAdmin_buttons">
                 <Link to='/edit-delete'>
-                        <button className="mainAdmin_button">Edit</button>
+                    <button className="mainAdmin_button">Edit</button>
                 </Link>
                 <Link to='/create'>
-                        <button className="mainAdmin_button">Add</button>
+                    <button className="mainAdmin_button">Add</button>
                 </Link>
             </div>
             <div className = "mainAdmin_items">{adminItems}</div>

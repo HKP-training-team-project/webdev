@@ -3,15 +3,22 @@ import { Link } from 'react-router-dom';
 import JWT from 'jsonwebtoken';
 import UserItemListing from "./user-item-listing";
 import "./main-user.css";
+import {useSelector, useDispatch} from 'react-redux'
 
 const BASE_URL = "https://hkp-training-teamprj.herokuapp.com";
 
 const MainUser = () => {
+    const login = useSelector(state => state.login)
+    const dispatch = useDispatch()
     const [items, setItems] = useState([]);
     const [filter, setFilter] = useState(null)
     const [numItemsInCart, setNumItemsInCart] = useState(0);
     const token = localStorage.getItem('token');
     const userId = JWT.decode(token,'Put secret in .env!!!')._id;
+
+    const logout = () => {
+        dispatch({type: 'LOGOUT'});
+    }
 
     const getItems = () => {
         fetch(`${BASE_URL}/items`)
@@ -90,6 +97,9 @@ const MainUser = () => {
                 <div id="user-items-page-header" className="d-flex justify-content-center w-100">
                     <h1 id="user-page-title" >Shopping</h1>
                 </div>
+                <Link to="/">
+                    <button id = "logout-button" onClick = {logout}>Logout</button>
+                </Link>
             </div>
             <div className="container-fluid form-group d-flex flex-column align-items-center w-50" id="main-user-filter">
                 <h1>Filter Items</h1>
