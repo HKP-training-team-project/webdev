@@ -58,9 +58,11 @@ const Checkout = (props) => {
             <h2>Checkout</h2>
             <table id="cart-items-list">
                 <thead>
-                    <th>Item</th>
-                    <th>Quantity</th>
-                    <th>Cost</th>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Cost</th>
+                    </tr>
                 </thead>
                 <tbody>
                 {

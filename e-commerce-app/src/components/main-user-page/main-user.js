@@ -68,13 +68,15 @@ const MainUser = () => {
     if(filter) {
         for(let i of items) {
             if(i.category.trim().toLowerCase() === filter){
-                itemsList.push(<UserItemListing key={i._id} 
-                    id={i._id}
-                    name={i.itemname} 
-                    price={i.price} 
-                    imgs={i.pictures} 
-                    description={i.description} 
-                />)
+                if(i.pictures) {
+                    itemsList.push(<UserItemListing key={i._id} 
+                        id={i._id}
+                        name={i.itemname} 
+                        price={i.price} 
+                        imgs={i.pictures} 
+                        description={i.description} 
+                    />)
+                }
             }
         }
     }

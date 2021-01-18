@@ -47,7 +47,7 @@ const Create = () => {
                 <div className = "create_box">
                     {pic != null ? <img src = {pic}/> : <p>Choose an image</p>}
                 </div>
-                    <input class="w-75" type = "file" accept="image/*" onChange = {fileHandler}/>
+                    <input className="w-75" type = "file" accept="image/*" onChange = {fileHandler}/>
             </div>
                 <div className = "create_inputs">
                     <form className = "create_form" enctype="multipart/form-data" onSubmit = {handleSubmit}>
