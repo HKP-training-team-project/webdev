@@ -1,0 +1,50 @@
+.user-item-container {
+  background-color: white;
+  border-radius: 10px; 
+  padding: 15px 35px;
+  text-align: center;
+  margin: 25px;
+  transition: transform ease-in-out .2s;
+}
+
+.user-item-container:hover {
+  transform: scale(1.02);
+}
+
+.user-item-name {
+  font-size: 2rem;
+}
+
+.user-item-price {
+  font-size: 1.2rem;
+  color: #757575;
+}
+
+.user-item-description {
+  padding-top: 15px;
+  font-size: 1.3rem;
+}
+
+.user-item-link {
+  color: black;
+  text-decoration: none;
+}
+
+.user-item-link:hover {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.user-item-imgbox {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+

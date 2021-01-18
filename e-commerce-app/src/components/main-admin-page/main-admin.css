@@ -1,0 +1,94 @@
+.mainAdmin {
+    min-height: 100vh;
+}
+.mainAdmin h1 {
+    padding: 20px 20px 10px 20px;
+    color: #212121;
+    text-align: center;
+}
+
+.mainAdmin h2 {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 3px solid #B3E5FC;
+    margin-bottom: 25px;
+}
+
+.mainAdmin_buttons {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+}
+
+.mainAdmin_button {
+    border: none;
+    padding: 9px 15px 9px 15px;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: #03A9F4;
+    color: white;
+}
+
+.mainAdmin_button:hover {
+    background-color: #0288D1;
+}
+
+.mainAdmin_items {
+    display: grid;
+    grid-template-columns: 260px 260px 260px;
+    grid-gap: 24px;
+    justify-content: center;
+}
+
+@media (max-width: 875px) {
+    .mainAdmin_items {
+        grid-template-columns: 260px 260px;
+    }
+}
+
+@media (max-width: 590px) {
+    .mainAdmin_items {
+        grid-template-columns: 260px;
+    }
+}
+.adminItem_img{
+    width: 260px;
+    height: 260px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.adminItem img{
+    width: 280px;
+}
+
+
+.adminItem h3{
+    font-size: 1.3em;
+    margin: 0px;
+    padding-top: 5px;
+}
+
+.adminItem p{
+    color: #757575;
+    font-size: 0.9em;
+}
+
+#logout-button-admin {
+    position: fixed;
+    left: 10px;
+    border: none;
+    padding: 9px 15px 9px 15px;
+    border-radius: 10px;
+    background-color: #03A9F4;
+    color: white;
+    margin: 16px;
+  }
+  
+  #logout-button-admin:hover {
+    background-color: #0288D1;
+  }
