@@ -1,5 +1,8 @@
+html {
+    background-color: #B3E5FC;
+}
 .signup-main-container {
-    height: 100vh;
+    margin-top: 20px;
     background: #B3E5FC;
 }
 
